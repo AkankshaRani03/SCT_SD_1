@@ -170,7 +170,7 @@ The `assets/` folder contains 7 screenshots showcasing different features and se
 4. **Start converting temperatures**
    - The application will work instantly without any installation required
 
-## \ud83d\udcc4 Browser Compatibility
+## Browser Compatibility
 
 - ✅ Chrome/Chromium (recommended)
 - ✅ Firefox
@@ -180,7 +180,7 @@ The `assets/` folder contains 7 screenshots showcasing different features and se
 
 **Note**: All modern browsers with ES6 support are compatible. LocalStorage feature requires cookies/storage to be enabled.
 
-## \ud83d\udcda Learning Outcomes
+##  Learning Outcomes
 
 This project demonstrates:
 - DOM manipulation and event handling
@@ -191,7 +191,7 @@ This project demonstrates:
 - Input validation and error handling
 - Interactive UI components
 
-## \ud83d\udcbe System Requirements
+##  System Requirements
 
 - Any modern web browser with JavaScript enabled
 - 2+ MB free disk space for the application
@@ -223,10 +223,3 @@ Software Development Intern – SkillCraft Technology
 ## 📄 License
 
 This project is part of the SkillCraft Technology internship program and is for educational purposes.
-
-## 🤝 Feedback & Support
-
-For questions or suggestions regarding this project, please reach out during your internship sessions.
-
-**Version**: 2.0 (Updated June 2026)
-
