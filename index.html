@@ -1,53 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Converter</title>
-
+    <title>Temperature Intelligence Dashboard</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="container">
 
-        <h1>🌡 Temperature Converter</h1>
+        <header>
 
-        <div class="form-group">
-            <label>Enter Temperature</label>
-            <input type="number" id="temperature" placeholder="Enter value">
-        </div>
+    <button id="themeToggle">
+        🌙
+    </button>
 
-        <div class="form-group">
-            <label>From</label>
-            <select id="fromUnit">
-                <option value="C">Celsius</option>
-                <option value="F">Fahrenheit</option>
-                <option value="K">Kelvin</option>
-            </select>
-        </div>
+    <h1>🌡 Temperature Intelligence Dashboard</h1>
 
-        <div class="form-group">
-            <label>To</label>
-            <select id="toUnit">
-                <option value="C">Celsius</option>
-                <option value="F">Fahrenheit</option>
-                <option value="K">Kelvin</option>
-            </select>
-        </div>
+    <p>
+        Convert, Learn, Analyze & Explore Temperature Scales
+    </p>
 
-        <div class="buttons">
-            <button onclick="convertTemperature()">
-                Convert
-            </button>
+</header>
 
-            <button onclick="clearFields()" class="clear-btn">
-                Clear
-            </button>
-        </div>
+        <div class="bento-grid">
 
-        <div id="result">
-            Result will appear here
+            <!-- CONVERTER -->
+
+            <section class="card hero-card">
+
+                <h2>Temperature Converter</h2>
+
+                <input
+                    type="number"
+                    id="temperature"
+                    placeholder="Enter Temperature">
+
+                <div class="unit-buttons">
+
+    <button class="unit-btn active"
+            onclick="setUnit('C',this)">
+        Celsius
+    </button>
+
+    <button class="unit-btn"
+            onclick="setUnit('F',this)">
+        Fahrenheit
+    </button>
+
+    <button class="unit-btn"
+            onclick="setUnit('K',this)">
+        Kelvin
+    </button>
+
+</div>
+
+                <button onclick="convertTemperature()">
+                    Convert
+                </button>
+
+            </section>
+
+            <!-- THERMOMETER -->
+
+            <section class="card thermo-card">
+
+                <h2>Live Thermometer</h2>
+
+                <div class="thermometer">
+
+                    <div id="thermoFill"></div>
+
+                </div>
+
+            </section>
+
+            <!-- RESULTS -->
+
+            <section class="card result-card-grid">
+
+                <h2>Converted Values</h2>
+
+                <div id="results">
+
+                </div>
+
+            </section>
+
+            <!-- COMFORT -->
+
+            <section class="card comfort-card">
+
+                <h2>Comfort Analysis</h2>
+
+                <div id="comfortBox">
+
+                    Enter a temperature to begin.
+
+                </div>
+
+            </section>
+
+            <!-- FACTS -->
+
+            <section class="card fact-card">
+
+                <h2>Science Facts</h2>
+
+                <p id="factBox">
+
+                    Click below to learn something interesting.
+
+                </p>
+
+                <button onclick="generateFact()">
+
+                    Generate Fact
+
+                </button>
+
+            </section>
+
+            <!-- GUIDE -->
+
+            <section class="card guide-card-big">
+
+                <h2>Temperature Scale Guide</h2>
+
+                <div class="guide-grid">
+
+                    <div class="guide-card">
+
+                        <h3>🌡 Celsius</h3>
+
+                        <p>Used in most countries.</p>
+
+                        <p>Water freezes at 0°C</p>
+
+                        <p>Water boils at 100°C</p>
+
+                    </div>
+
+                    <div class="guide-card">
+
+                        <h3>🔥 Fahrenheit</h3>
+
+                        <p>Mainly used in the USA.</p>
+
+                        <p>Water freezes at 32°F</p>
+
+                        <p>Water boils at 212°F</p>
+
+                    </div>
+
+                    <div class="guide-card">
+
+                        <h3>⚛ Kelvin</h3>
+
+                        <p>Used in scientific research.</p>
+
+                        <p>Absolute Zero = 0K</p>
+
+                        <p>Water freezes at 273.15K</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- QUIZ -->
+
+            <section class="card quiz-card">
+
+                <h2>🎮 Temperature Quiz</h2>
+
+                <div id="score">
+
+                    Score: 0
+
+                </div>
+
+                <p id="quizQuestion">
+
+                </p>
+
+                <button onclick="checkQuiz(true)">
+                    True
+                </button>
+
+                <button onclick="checkQuiz(false)">
+                    False
+                </button>
+
+                <p id="quizResult">
+
+                </p>
+
+            </section>
+
+            <!-- TEMPERATURE RECORDS -->
+
+            <section class="card records-card">
+
+                <h2>🌍 Temperature Records</h2>
+
+                <div class="record-grid">
+
+                    <div class="record">
+
+                        <h3>🔥 Highest</h3>
+
+                        <p>56.7°C</p>
+
+                    </div>
+
+                    <div class="record">
+
+                        <h3>❄ Lowest</h3>
+
+                        <p>-89.2°C</p>
+
+                    </div>
+
+                    <div class="record">
+
+                        <h3>🧍 Human Body</h3>
+
+                        <p>37°C</p>
+
+                    </div>
+
+                    <div class="record">
+
+                        <h3>☀ Summer Avg</h3>
+
+                        <p>30°C</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- HISTORY -->
+
+            <section class="card history-card">
+
+                <h2>Recent Conversions</h2>
+
+                <ul id="historyList">
+
+                </ul>
+
+            </section>
+
         </div>
 
     </div>
@@ -55,4 +266,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
